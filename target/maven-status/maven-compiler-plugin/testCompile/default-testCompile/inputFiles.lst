@@ -1,0 +1,5 @@
+/Users/svensun/workspaces/antigravity_projects/custom_langfuse_traces/src/test/java/com/antigravity/langfuse/domain/ObservationModelTest.java
+/Users/svensun/workspaces/antigravity_projects/custom_langfuse_traces/src/test/java/com/antigravity/langfuse/domain/TraceModelTest.java
+/Users/svensun/workspaces/antigravity_projects/custom_langfuse_traces/src/test/java/com/antigravity/langfuse/reporter/FileReporterTest.java
+/Users/svensun/workspaces/antigravity_projects/custom_langfuse_traces/src/test/java/com/antigravity/langfuse/reporter/KafkaReporterTest.java
+/Users/svensun/workspaces/antigravity_projects/custom_langfuse_traces/src/test/java/com/antigravity/langfuse/sdk/TraceSdkTest.java
