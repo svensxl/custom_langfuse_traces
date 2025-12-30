@@ -63,6 +63,16 @@ public class Tracer {
         }
     }
 
+    public void close() {
+        if (reporter != null) {
+            try {
+                reporter.close();
+            } catch (Exception e) {
+                System.err.println("Failed to close reporter: " + e.getMessage());
+            }
+        }
+    }
+
     public static class Builder {
         private Reporter reporter;
         private String defaultRelease;

@@ -115,6 +115,10 @@ public class Trace {
         this.tracer.getReporter().report(this.model);
     }
 
+    public void end() {
+        this.tracer.getReporter().report(this.model);
+    }
+
     public static class Builder {
         private final TraceModel.TraceModelBuilder modelBuilder = TraceModel.builder();
         private final Tracer tracer;
@@ -128,6 +132,7 @@ public class Trace {
                 modelBuilder.environment(tracer.getDefaultEnvironment());
                 modelBuilder.isPublic(tracer.isPublic());
             }
+            this.id(IdGenerator.generateTraceId());
         }
 
         // ... existing setters ...
@@ -153,12 +158,16 @@ public class Trace {
         }
 
         public Builder metadata(Map<String, String> metadata) {
-            modelBuilder.metadata(metadata);
+            if (metadata != null) {
+                modelBuilder.metadata(new java.util.HashMap<>(metadata));
+            }
             return this;
         }
 
         public Builder tags(List<String> tags) {
-            modelBuilder.tags(tags);
+            if (tags != null) {
+                modelBuilder.tags(new java.util.ArrayList<>(tags));
+            }
             return this;
         }
 

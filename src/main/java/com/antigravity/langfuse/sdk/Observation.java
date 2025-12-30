@@ -3,6 +3,7 @@ package com.antigravity.langfuse.sdk;
 import com.antigravity.langfuse.Tracer;
 import com.antigravity.langfuse.domain.ObservationModel;
 import com.antigravity.langfuse.domain.ObservationType;
+import com.antigravity.langfuse.utils.IdGenerator;
 
 import java.time.Instant;
 import java.util.Map;
@@ -160,6 +161,7 @@ public class Observation {
                 modelBuilder.environment(tracer.getDefaultEnvironment());
                 modelBuilder.isPublic(tracer.isPublic());
             }
+            modelBuilder.id(IdGenerator.generateObservationId());
         }
 
         public Builder parent(Trace trace) {
